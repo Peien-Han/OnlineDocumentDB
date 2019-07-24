@@ -1,0 +1,2 @@
+# OnlineDocumentDB
+Searching lectures on the Internet is always a trouble. In some labs and groups, we could build a small database to easily keep the paper and get the wanted one. This project is the database ! There are many useful skills and techs has been applied such as multi-thread, heart-beat socket etc. Maybe it is not good enough, but I still work on it. And I also expect for your support and suggestion. （Please take care of the Copyright of the articles)）
