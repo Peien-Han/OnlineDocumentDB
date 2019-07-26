@@ -1,3 +1,39 @@
+//********************************************************************
+//  
+//  DocumentDB.h：
+//      1、定义并实现 访问MySQL的对象   ：class MySQL_Root；
+//      2、定义 需求的常规操作          ：class Normal_Operator；
+//      3、定义并实现 需求的数据库操作  ：class Database_Operator；
+//      3、定义并实现 对客户端服务线程任务于，包括收发信息和需求处理：class ServerTask；
+//
+///  功能特点：
+//      1、MySQL保存有自定义过程，方便服务器进行调用；
+//      2、支持应用层级的 心跳检测；
+//      3、ServerTask定义独立的线程池任务，可对不同客户端进行独立的响应；
+//      4、对MySQL返回的信息进行特定格式的编码返回客户端；
+//      5、特定的客户端请求格式，例如： “请求内容#请求方法”
+//
+//  目前支持功能：
+//      1、按作者查询；
+//      2、按年份查询；
+//      3、查询所有文档；
+//
+//  未来版本将增加功能：
+//      1、按学术领域查询；
+//      2、按关键词查询；
+//      3、文献信息上传至管理员，审核后添加至数据库；
+//
+//  制作信息：
+//      韩佩恩  2019 于 上海同济大学
+//
+//  致谢：
+//      感谢 CSDN 和 博客园 两个论坛上探讨技术和答疑解惑的热情网友！
+//
+//********************************************************************
+
+#if!defined DOCUMENTDB_H
+#define DOCUMENTDB_H
+
 #include <iostream>
 #include <string.h>
 #include <unistd.h>
@@ -8,7 +44,7 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <map>
-#include "threadpool.h"
+#include "ThreadPool.h"
 #include "mysql.h"
 
 //定义心跳检测 避免服务器误读；
@@ -260,5 +296,5 @@ bool ServerTask::_Receive(){
     }
 }
 
-
+#endif
 
